@@ -30,6 +30,9 @@ spec:
       containers:
       - name: metrics-server
         image: k8s.gcr.io/metrics-server-amd64:v0.3.1
+        command:
+        - /metrics-server
+        - --kubelet-insecure-tls
         imagePullPolicy: Always
         volumeMounts:
         - name: tmp-dir
